@@ -1,12 +1,17 @@
 import logoImg from '../../assets/logo.svg'
 import { Container, Content } from './styles'
 
-export function Header() {
+interface props {
+    handleOpenModal: () => void;
+}
+
+export function Header({handleOpenModal}: props) {
+
     return (
         <Container>
             <Content>
                 <img src={logoImg} alt="CLC Money" />
-                <button type="button"> Nova Transação </button>
+                <button type="button" onClick={handleOpenModal}> Nova Transação </button>
             </Content>
         </Container>
     )
